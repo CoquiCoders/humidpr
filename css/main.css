@@ -158,7 +158,7 @@ h1 {
     float: right;
     width: 100%;
     /*right: 0;*/
-    clip: rect(0, 1000px, 1000px, 200px); /* top, right, bottom, left */
+    clip: rect(0, 1000px, 1000px, 0px); /* top, right, bottom, left */
 
 }
 
