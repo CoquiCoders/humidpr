@@ -19,12 +19,21 @@ var humidifier = {
       },
 
       getImageForHumidity: function() {
-        if (this.humidity <= 0.7) {
-            return 'park-export.jpg';
-        }
-        else {
-            return 'parking-export.jpg';
-        }
+          var imageName;
+          var humidity = this.currentWeather.humidity;
+          if (humidity < 65) {
+              imageName = 'park-export.jpg';
+          }
+          else if (humidity >= 65 && humidity < 75) {
+              imageName = 'park-export.jpg';
+          }
+          else if (humidity >= 75 && humidity < 85) {
+              imageName = 'parking-export.jpg';
+          }
+          else if (humidity >= 85) {
+              imageName = 'parking-export.jpg';
+          }
+          return imageName;
       },
 
       humidify: function () {
