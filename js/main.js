@@ -22,16 +22,16 @@ var humidifier = {
           var imageName;
           var humidity = this.currentWeather.humidity;
           if (humidity < 65) {
-              imageName = 'park-export.jpg';
+              imageName = '0-65.png';
           }
           else if (humidity >= 65 && humidity < 75) {
-              imageName = 'park-export.jpg';
+              imageName = '65-75.png';
           }
           else if (humidity >= 75 && humidity < 85) {
-              imageName = 'parking-export.jpg';
+              imageName = '75-85.png';
           }
           else if (humidity >= 85) {
-              imageName = 'parking-export.jpg';
+              imageName = '85-100.png';
           }
           return imageName;
       },
