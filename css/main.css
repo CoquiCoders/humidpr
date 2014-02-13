@@ -123,12 +123,26 @@ Y8.   .88 Y8.   .8P d8'   .8P    88    Y8.   .8P 88   88   88
 
 
 html {
-    background: url(../img/bg.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: url(../img/bg_pattern.png) repeat fixed;
+    position: relative;
+    min-height: 100%;
 }
+
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+}
+
+.footer {
+    width:100%;
+    background:black;
+    height: 187px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: url('../img/buildings-03.png') no-repeat center bottom;
+}
+
+
 
 .main-content-section {
     text-align: center;
@@ -136,7 +150,7 @@ html {
     z-index: 1;
 }
 
-.main-content-section:before {
+/*.main-content-section:before {
     content: "";
     position: absolute;
     top: 0;
@@ -149,7 +163,7 @@ html {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-}
+}*/
 #humidity, #huMessage {
     font-size: 30px;
     padding:10px;
