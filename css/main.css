@@ -129,20 +129,31 @@ html {
 }
 
 body {
-    margin: 0 0 100px; /* bottom = footer height */
+    margin: 0 0 150px; /* bottom = footer height */
 }
 
 .footer {
     width:100%;
-    background:black;
-    height: 187px;
     position: absolute;
     left: 0;
     bottom: 0;
-    background: url('../img/buildings-03.png') no-repeat center bottom;
 }
 
+.footer-houses {
+    height: 187px;
+    background: url('../img/buildings-03.png') no-repeat center bottom;
+   bottom: 50px;
+}
 
+.footer-cred {
+   height: 50px;
+   background: black;
+   color: white;
+}
+.footer-cred a, .footer-cred a:hover, .footer-cred a:visited {
+    text-decoration: underline;
+    color:white;
+}
 
 .main-content-section {
     text-align: center;
@@ -175,6 +186,8 @@ h1 {
     font-family: 'Oswald', Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     text-align: center;
+    margin-top: 0.3em !important;
+    margin-bottom: 0.3em !important;
 }
 
 @media (max-width: 758px) {
