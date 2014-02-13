@@ -25,7 +25,9 @@ var humidifier = {
       },
 
       updateForHumidity: function() {
-          var humidity = this.currentWeather.humidity;
+          // Check hashtag first;
+          var humidity = this.currentWeather.humidity * 100;
+          console.log(humidity);
           if (humidity < 65) {
               this.imageName = '0-65.png';
               this.huMessage = 'Mas o menos.';
@@ -49,26 +51,32 @@ var humidifier = {
       },
 
       updateDisplay: function() {
-        this.updateForHumidity();
-        $('.image-container img').attr('src', 'img/' + humidifier.imageName);
-        $('#humidity').text(Math.round((this.currentWeather.humidity * 100)) + '%');
-        $('#huMessage').text(this.huMessage);
-        $('#huMessageEng').text(this.huMessageEng);
+          this.updateForHumidity();
+          $('.image-container img').attr('src', 'img/' + humidifier.imageName);
+          $('#humidity').text(Math.round((this.currentWeather.humidity * 100)) + '%');
+          $('#huMessage').text(this.huMessage);
+          $('#huMessageEng').text(this.huMessageEng);
       },
 
       humidify: function () {
+          // Get hashtag;
+          var hashtag = window.location.hash;
+          if (hashtag != null) {
+            hash = hashtag.substr(1);
+          }
+          // Validate;
+          console.log(hash);
+          if (hash > 0 && hash <= 100) {
+              this.currentWeather = {humidity: hash / 100};
+              this.updateDisplay();
+          }
           if (!this.currentWeather) {
               var self = this;
               this.getWeather(this.lattitude, this.longitude).done(function(jqXHR, textStatus, errorThrow) {
-                  console.log('promise');
-                  console.log(jqXHR);
-                  console.log(textStatus);
-                  console.log(errorThrow);
-                  if (textStatus != 'success') {
-                        // do something.
+                  if (textStatus == 'success') {
+                    humidifier.currentWeather = jqXHR.currently;
+                    humidifier.updateDisplay();
                   }
-                  humidifier.currentWeather = jqXHR.currently;
-                  humidifier.updateDisplay();
              });
           }
       }
