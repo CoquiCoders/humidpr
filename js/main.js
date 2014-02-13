@@ -4,6 +4,10 @@ var humidifier = {
 
       longitude: '66.0667',
 
+      imageName: '0-65.png',
+
+      huMessage: 'Not so bad.',
+
       getWeather: function(lattitude, longitude, dateTime) {
           if (!dateTime || dateTime == null) {
             dateTime = Math.round(+new Date()/1000)
@@ -18,22 +22,27 @@ var humidifier = {
           });
       },
 
-      getImageForHumidity: function() {
-          var imageName;
+      updateForHumidity: function() {
           var humidity = this.currentWeather.humidity;
           if (humidity < 65) {
-              imageName = '0-65.png';
+              this.imageName = '0-65.png';
           }
           else if (humidity >= 65 && humidity < 75) {
-              imageName = '65-75.png';
+              this.imageName = '65-75.png';
           }
           else if (humidity >= 75 && humidity < 85) {
-              imageName = '75-85.png';
+              this.imageName = '75-85.png';
           }
           else if (humidity >= 85) {
-              imageName = '85-100.png';
+              this.imageName = '85-100.png';
           }
-          return imageName;
+      },
+
+      updateDisplay: function() {
+        this.updateForHumidity();
+        $('.image-container img').attr('src', 'img/' + humidifier.imageName);
+        $('#humidity').text(Math.round((this.currentWeather.humidity * 100)) + '%');
+        $('#huMessage').text(this.huMessage);
       },
 
       humidify: function () {
@@ -48,14 +57,8 @@ var humidifier = {
                         // do something.
                   }
                   humidifier.currentWeather = jqXHR.currently;
-                  var image = humidifier.getImageForHumidity();
-                  $('.image-container img').attr('src', 'img/' + image);
-
-           //       var height = $("#img-slider .right img").height();
-       //          var offset = (this.currentWeather.humidity * height);
-         //         $("#img-slider .right").css("clip", "rect(0, 1000px, " + offset + "px, 0px)"); /* top, right, bottom, left */
-
-              });
+                  humidifier.updateDisplay();
+             });
           }
       }
 }
