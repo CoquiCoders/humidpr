@@ -134,10 +134,11 @@ body {
 
 .footer {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    width:100%;
+    width: 100%;
     position: absolute;
     left: 0;
     bottom: 0;
+    text-align: center;
 }
 
 .footer-houses {
@@ -151,9 +152,14 @@ body {
    background: gray;
    color: white;
 }
-.footer-cred a, .footer-cred a:hover, .footer-cred a:visited {
-    text-decoration: underline;
-    color:white;
+
+.footer-cred a {
+    text-decoration: none;
+    color: #ffa57d;
+}
+
+.footer-cred a:hover, .footer-cred a:visited {
+	color: #cc5627;
 }
 
 .main-content-section {
