@@ -26,15 +26,19 @@ var humidifier = {
           var humidity = this.currentWeather.humidity;
           if (humidity < 65) {
               this.imageName = '0-65.png';
+              this.huMessage = 'No so bad.';
           }
           else if (humidity >= 65 && humidity < 75) {
               this.imageName = '65-75.png';
+              this.huMessage = 'Whoa.  My back is sweating';
           }
           else if (humidity >= 75 && humidity < 85) {
               this.imageName = '75-85.png';
+              this.huMessage = 'My hair has a mind of its own.';
           }
           else if (humidity >= 85) {
               this.imageName = '85-100.png';
+              this.huMessage = 'I look like medusa.';
           }
       },
 
