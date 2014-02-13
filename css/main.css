@@ -152,6 +152,7 @@ body {
    height: 50px;
    background: gray;
    color: white;
+   padding-top: 15px;
 }
 
 .footer-cred a {
