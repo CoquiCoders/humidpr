@@ -133,10 +133,12 @@ body {
 }
 
 .footer {
-    width:100%;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    width: 100%;
     position: absolute;
     left: 0;
     bottom: 0;
+    text-align: center;
 }
 
 .footer-houses {
@@ -147,12 +149,17 @@ body {
 
 .footer-cred {
    height: 50px;
-   background: black;
+   background: gray;
    color: white;
 }
-.footer-cred a, .footer-cred a:hover, .footer-cred a:visited {
-    text-decoration: underline;
-    color:white;
+
+.footer-cred a {
+    text-decoration: none;
+    color: #ffa57d;
+}
+
+.footer-cred a:hover, .footer-cred a:visited {
+	color: #cc5627;
 }
 
 .main-content-section {
@@ -179,11 +186,15 @@ body {
     font-size: 30px;
     padding:10px;
     font-weight:bold;
-    font-family: 'Oswald', Helvetica, Arial, sans-serif;
+    font-family: 'Capriola', Helvetica, Arial, sans-serif;
+}
+
+#huMessageEng {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
 h1 {
-    font-family: 'Oswald', Helvetica, Arial, sans-serif;
+    font-family: 'Capriola', Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     text-align: center;
     margin-top: 0.3em !important;
