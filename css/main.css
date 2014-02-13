@@ -144,7 +144,8 @@ body {
 .footer-houses {
     height: 187px;
     background: url('../img/buildings-03.png') no-repeat center bottom;
-   bottom: 50px;
+	bottom: 50px;
+	margin-bottom: -2px;
 }
 
 .footer-cred {
