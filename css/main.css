@@ -133,6 +133,7 @@ body {
 }
 
 .footer {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     width:100%;
     position: absolute;
     left: 0;
@@ -147,7 +148,7 @@ body {
 
 .footer-cred {
    height: 50px;
-   background: black;
+   background: gray;
    color: white;
 }
 .footer-cred a, .footer-cred a:hover, .footer-cred a:visited {
@@ -180,6 +181,10 @@ body {
     padding:10px;
     font-weight:bold;
     font-family: 'Capriola', Helvetica, Arial, sans-serif;
+}
+
+#huMessageEng {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
 h1 {
