@@ -29,22 +29,22 @@ var humidifier = {
           if (humidity < 65) {
               this.imageName = '0-65.png';
               this.huMessage = 'Mas o menos.';
-              this.huMessageEng = 'Not so bad.';
+              this.huMessageEng = '(Not so bad.)';
           }
           else if (humidity >= 65 && humidity < 75) {
               this.imageName = '65-75.png';
               this.huMessage = 'Mi espalda se encuentra humeda.';
-              this.huMessageEng = 'Whoa.  My back is sweating';
+              this.huMessageEng = '(Whoa.  My back is sweating)';
           }
           else if (humidity >= 75 && humidity < 85) {
               this.imageName = '75-85.png';
               this.huMessage = 'Mi pelo no copera.';
-              this.huMessageEng = 'My hair has a mind of its own.';
+              this.huMessageEng = '(My hair has a mind of its own.)';
           }
           else if (humidity >= 85) {
               this.imageName = '85-100.png';
               this.huMessage = 'Me parezco a una Medusa.';
-              this.huMessageEng = 'I look like medusa.';
+              this.huMessageEng = '(I look like medusa.)';
           }
       },
 
