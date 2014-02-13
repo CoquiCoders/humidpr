@@ -59,13 +59,13 @@ var humidifier = {
       },
 
       humidify: function () {
+          $('.hastip').tooltipsy();
           // Get hashtag;
           var hashtag = window.location.hash;
           if (hashtag != null) {
             hash = hashtag.substr(1);
           }
           // Validate;
-          console.log(hash);
           if (hash > 0 && hash <= 100) {
               this.currentWeather = {humidity: hash / 100};
               this.updateDisplay();
