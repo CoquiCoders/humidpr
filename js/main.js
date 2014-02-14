@@ -28,12 +28,17 @@ var humidifier = {
           // Check hashtag first;
           var humidity = this.currentWeather.humidity * 100;
           console.log(humidity);
-          if (humidity < 65) {
-              this.imageName = '0-65.png';
+          if (humidity < 50) {
+              this.imageName = '0-50.png';
               this.huMessage = 'Mas o menos.';
               this.huMessageEng = '(Not so bad.)';
           }
-          else if (humidity >= 65 && humidity < 75) {
+          else if (humidity >= 50 && humidity < 65) {
+              this.imageName = '50-65.png';
+              this.huMessage = 'Sintiendome pegajosa.';
+              this.huMessageEng = '(Starting to feel it...)';
+          }
+		  else if (humidity >= 65 && humidity < 75) {
               this.imageName = '65-75.png';
               this.huMessage = 'Mi espalda se encuentra humeda.';
               this.huMessageEng = '(Whoa.  My back is sweating)';
@@ -43,10 +48,15 @@ var humidifier = {
               this.huMessage = 'Mi pelo no copera.';
               this.huMessageEng = '(My hair has a mind of its own.)';
           }
-          else if (humidity >= 85) {
-              this.imageName = '85-100.png';
+          else if (humidity >= 85 && humidity < 95) {
+              this.imageName = '85-95.png';
               this.huMessage = 'Me parezco a una Medusa.';
               this.huMessageEng = '(I look like medusa.)';
+          }
+          else if (humidity >= 95) {
+              this.imageName = '95-100.png';
+              this.huMessage = 'dios mio, mi pelo cobro vida propia.';
+              this.huMessageEng = '(I have no control over my hair at this point.)';
           }
       },
 
